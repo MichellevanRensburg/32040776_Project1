@@ -26,8 +26,25 @@
         <module>AccountSystemRepository</module>
         <module>AccountSystemTranslator</module>
         <module>AccountSystemLogic</module>
-        <module>AccountSystemWeb</module>
         <module>AccountSystemWebSpringBoot</module>
+        <module>AccountSystemWeb</module>
+
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.3.30.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
