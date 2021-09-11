@@ -15,7 +15,7 @@ import za.ac.nwu.ac.domain.service.GeneralResponse;
 public class AccountTypeController {
 
     @GetMapping("/all")
-    @ApiOperation(value = "Gets all the configured Account Types.", notes = "Returns a list of Account Types")
+    @ApiOperation(value = "Gets all the configured Account Types.", notes = "Returns a list of the Account Types")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Account Types returned", response = GeneralResponse.class),
             @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
