@@ -31,9 +31,20 @@
         <module>AccountSystemTranslator</module>
         <module>AccountSystemLogic</module>
         <module>AccountSystemWebSpringBoot</module>
-        <module>AccountSystemWeb</module>
 
     </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <dependencyManagement>
         <dependencies>
@@ -78,11 +89,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>com.oracle</groupId>
                 <artifactId>ojdbc7</artifactId>
                 <version>12.1.0.1</version>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
