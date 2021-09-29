@@ -1,5 +1,4 @@
-package za.ac.nuw.ac.translator.config;
-
+package za.ac.nwu.ac.translator.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;

@@ -10,7 +10,6 @@
         <module name="AccountSystemDomain" />
         <module name="AccountSystemTranslator" />
         <module name="AccountSystemLogic" />
-        <module name="AccountSystemWeb" />
         <module name="AccountSystemWebSpringBoot" />
         <module name="AccountSystemRepository" />
       </profile>

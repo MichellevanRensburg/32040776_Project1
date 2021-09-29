@@ -89,19 +89,19 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!--<dependency>
+            <dependency>
                 <groupId>com.oracle</groupId>
-                <artifactId>ojdbc7</artifactId>
+                <artifactId>ojdbc8</artifactId>
                 <version>12.1.0.1</version>
-            </dependency>-->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
+    <!--<dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-    </dependencies>
+    </dependencies>-->
 
 </project>
