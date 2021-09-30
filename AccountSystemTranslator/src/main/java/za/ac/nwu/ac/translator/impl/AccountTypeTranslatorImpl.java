@@ -23,7 +23,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     public List<AccountTypeDto> getAllAccountTypes(){
         List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
         try{
-            for(AccountType accountType : accountTypeRepository.findAll(){
+            for(AccountType accountType : accountTypeRepository.findAll()){
                 accountTypeDtos.add(new AccountTypeDto(accountType));
             }
         }catch (Exception e){
