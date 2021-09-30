@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
-import za.ac.nwu.ac.domain.persistense.AccountType;
+/*import za.ac.nwu.ac.domain.persistense.AccountType;*/
 import za.ac.nwu.ac.domain.service.GeneralResponse;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.logic.flow.CreateAccountTypeFlow;
@@ -51,7 +51,7 @@ public class AccountTypeController {
             @ApiResponse(code = 200, message = "AccountType was succesfully created", response = GeneralResponse.class),
             @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
             @ApiResponse(code = 500, message = "Internal Server Error", response = GeneralResponse.class)})
-    Public ResponseEntity<GeneralResponse<AccountTypeDto>> create(
+    public ResponseEntity<GeneralResponse<AccountTypeDto>> create(
             @ApiParam(value = "Request body to create a new Account Type.", required = true)
             @RequestBody AccountTypeDto accountTypeDto) {
          AccountTypeDto accountTypeResponse = createAccountTypeFlow.create(accountType);

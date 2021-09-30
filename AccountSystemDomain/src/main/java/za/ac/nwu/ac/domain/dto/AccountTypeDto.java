@@ -31,7 +31,7 @@ public class AccountTypeDto implements Serializable{
     public AccountTypeDto(AccountType accountType){
         this.setAccountTypeName(accountType.getAccountTypeName());
         this.setCreationDate(accountType.getCreationDate());
-        this.setMnemonic(accountType.getMnemonic())
+        this.setMnemonic(accountType.getMnemonic());
     }
 
     @ApiModelProperty(position = 1,
@@ -82,7 +82,7 @@ public class AccountTypeDto implements Serializable{
     }
 
     @Override
-    public int hashCode(){return Objects.hash(mnemonic,accountTypeName,creationDate)}
+    public int hashCode(){return Objects.hash(mnemonic,accountTypeName,creationDate);}
 
     @Override
     public String toString(){
