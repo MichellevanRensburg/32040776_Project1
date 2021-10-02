@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @PropertySource(value = "classpath:application-db.properties")
 
 public class RepositoryConfig {
-
     /*private static final  String[] ENTITY_PACKAGES_TO_SCAN = {"za.ac.nwu.ac.domain.persistence"};
     private static final  String PERSISTENCE_UNIT_NAME = "account.system.persistence";
 
@@ -90,5 +89,4 @@ public class RepositoryConfig {
 
         return properties;
     }*/
-
 }
