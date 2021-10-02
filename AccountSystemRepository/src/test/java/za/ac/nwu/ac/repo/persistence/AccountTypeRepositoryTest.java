@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.domain.persistense.AccountType;
 import za.ac.nwu.ac.repo.config.RepositoryTestConfig;
 
@@ -39,8 +40,47 @@ public class AccountTypeRepositoryTest {
 
     @Test
     public void getAccountTypeByMnemonicNativeQuery(){
-        AccountType miles =  accountTypeRepository.getAccountTypeByMnemonicNativeQuery("MILES");
+        AccountType miles =  accountTypeRepository.getAccountTypeByMnemonicNativeQuery("MILESSS");
         assertNull(miles);
+    }
+
+    @Test
+    public void getAccountTypeByMnemonicMiles(){
+        AccountType miles =  accountTypeRepository.getAccountTypeByMnemonic("MILES");
+        assertNotNull(miles);
         assertEquals("MILES", miles.getMnemonic());
+    }
+
+    @Test
+    public void getAccountTypeByMnemonicPlay(){
+        AccountType miles =  accountTypeRepository.getAccountTypeByMnemonic("PLAY");
+        assertNotNull(miles);
+        assertEquals("PLAY", miles.getMnemonic());
+    }
+
+    @Test
+    public void getAccountTypeByMnemonic(){
+        AccountType miles =  accountTypeRepository.getAccountTypeByMnemonic("R");
+        assertNull(miles);
+    }
+
+    @Test
+    public void getAccountTypeDtoByMnemonicMiles(){
+        AccountTypeDto miles =  accountTypeRepository.getAccountTypeDtoByMnemonic("MILES");
+        assertNotNull(miles);
+        assertEquals("MILES", miles.getMnemonic());
+    }
+
+    @Test
+    public void getAccountTypeDtoByMnemonicPlay(){
+        AccountTypeDto miles =  accountTypeRepository.getAccountTypeDtoByMnemonic("PLAY");
+        assertNotNull(miles);
+        assertEquals("PLAY", miles.getMnemonic());
+    }
+
+    @Test
+    public void getAccountTypeDtoByMnemonic(){
+        AccountTypeDto miles =  accountTypeRepository.getAccountTypeDtoByMnemonic("R");
+        assertNull(miles);
     }
 }

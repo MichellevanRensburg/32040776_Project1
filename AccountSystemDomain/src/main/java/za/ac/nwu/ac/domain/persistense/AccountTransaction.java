@@ -7,14 +7,14 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "DC_ACCOUNT_TYPE_TX", schema = "AS_DC")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = 5320578342102714156L;
 
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
+    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_DC.AS_GENERIC_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")
 
     private Long transactionId;
     private AccountType accountType;//FK
@@ -36,7 +36,7 @@ public class AccountTransaction implements Serializable {
     @Id
     @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
-    @Column(name = "Transc_ID")
+    @Column(name = "TRANSC_ID")
     public Long getTransactionId() {
         return transactionId;
     }
@@ -51,7 +51,7 @@ public class AccountTransaction implements Serializable {
         return amount;
     }
 
-    @Column(name = "Transc_DATE")
+    @Column(name = "TRANSC_DATE")
     public LocalDate getTransactionDate() {
         return transactionDate;
     }

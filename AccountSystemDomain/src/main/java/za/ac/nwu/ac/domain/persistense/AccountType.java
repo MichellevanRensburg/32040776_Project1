@@ -10,13 +10,13 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "DC_ACCOUNT_TYPE", schema = "AS_DC")
 public class AccountType implements Serializable {
     private static final long serialVersionUID = 3833725316797154577L;
 
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
+    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_DC.AS_GENERIC_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")
 
     private Long accountTypeId;
     private String mnemonic;
