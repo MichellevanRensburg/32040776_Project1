@@ -4,12 +4,14 @@ import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
 import za.ac.nwu.ac.domain.persistense.AccountTransaction;
 import za.ac.nwu.ac.domain.persistense.AccountType;
+import za.ac.nwu.ac.logic.flow.CreateAccountTransactionFlow;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
+import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
 import java.time.LocalDate;
 
 @Component
-public class CreateAccountTransactionFlowImpl implements CreateAccountTransactionFlowFlow{
+public class CreateAccountTransactionFlowImpl implements CreateAccountTransactionFlow {
 
     private final AccountTransactionTranslator accountTransactionTranslator;
     private final FetchAccountTypeFlow fetchAccountTypeFlow;

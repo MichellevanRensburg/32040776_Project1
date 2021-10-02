@@ -43,7 +43,7 @@ public class AccountTransactionDto implements Serializable {
 
     @JsonIgnore
     public AccountTransaction buildAccountTransaction(AccountType accountType){
-        return new AccountTransaction(this.getTransactionId(), accountTypeMnemonic, this.getMemberId(), this.getAmount(), this.getTransactionDate());
+        return new AccountTransaction(this.getTransactionId(), accountType, this.getMemberId(), this.getAmount(), this.getTransactionDate());
     }
 
     public Long getTransactionId() {
