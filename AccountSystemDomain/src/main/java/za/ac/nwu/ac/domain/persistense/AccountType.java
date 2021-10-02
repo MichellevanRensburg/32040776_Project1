@@ -56,8 +56,8 @@ public class AccountType implements Serializable {
     public LocalDate getCreationDate() {
         return creationDate;
     }
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public Set<AccountTransaction> getAccountTranscation(){
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType"/*, orphanRemoval = true, cascade = CascadeType.PERSIST*/)
+    public Set<AccountTransaction> getAccountTransaction(){
         return accountTransaction;
     }
 
