@@ -103,7 +103,7 @@ public class AccountTransactionDto implements Serializable {
                 ", accountTypeMnemonic='" + accountTypeMnemonic + '\'' +
                 ", memberId=" + memberId +
                 ", amount='" + amount + '\'' +
-                ", transactiondate=" + transactionDate +
+                ", transactionDate=" + transactionDate +
                 '}';
     }
 

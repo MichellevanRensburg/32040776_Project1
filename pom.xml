@@ -23,6 +23,8 @@
 
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <swagger.version>1.5.20</swagger.version>
+
+        <haltOnFailure>false</haltOnFailure>//change to true later
     </properties>
 
     <modules>
