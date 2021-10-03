@@ -62,4 +62,9 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         }
     }
 
+    @Override
+    public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic) {
+        return null;
+    }
+
 }
