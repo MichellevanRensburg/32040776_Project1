@@ -28,7 +28,7 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
 
     @Override
     public AccountTransactionDto create(AccountTransactionDto accountTransactionDto){
-        LOGGER.info("The input object was {}", accountTransactionDto);
+        LOGGER.info("The input object was {}", acountTransactionDto);
 
         accountTransactionDto.setTransactionId(null);
 

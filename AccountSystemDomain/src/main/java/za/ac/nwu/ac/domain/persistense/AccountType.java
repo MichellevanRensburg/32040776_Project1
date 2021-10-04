@@ -10,7 +10,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "DC_ACCOUNT_TYPE", schema = "AS_DC")
+@Table(name = "ACCOUNT_TYPE", schema = "AS_DC")
 public class AccountType implements Serializable {
     private static final long serialVersionUID = 3833725316797154577L;
 
@@ -34,7 +34,10 @@ public class AccountType implements Serializable {
         this.creationDate = creationDate;
     }
 
-    public AccountType() {
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
+        this.mnemonic = mnemonic;
+        this.accountTypeName = accountTypeName;
+        this.creationDate = creationDate;
     }
 
     @Column(name = "ACCOUNT_TYPE_ID")

@@ -17,7 +17,6 @@ public class AccountTransactionDto implements Serializable {
     private static final long serialVersionUID = -6731456901152363824L;
     private Long transactionId;
     private String accountTypeMnemonic;
-    private AccountType accountType;
     private Long memberId;
     private Long amount;
     private LocalDate transactionDate;
@@ -90,7 +89,7 @@ public class AccountTransactionDto implements Serializable {
 
     @JsonIgnore
     public AccountTransaction getAccountTransaction(){
-        return new AccountTransaction(getTransactionId(), getAccountTypeMnemonic(), getMemberId(),getAmount(),getTransactionDate());
+        return new AccountTransaction(getTransactionId(), getAccountType(), getMemberId(),getAmount(),getTransactionDate());
     }
 
     @Override

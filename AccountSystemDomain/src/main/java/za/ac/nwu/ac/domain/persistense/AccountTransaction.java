@@ -7,14 +7,13 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "DC_ACCOUNT_TYPE_TX", schema = "AS_DC")
+@Table(name = "ACCOUNT_TYPE_TX", schema = "AS_DC")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = 5320578342102714156L;
-
-    @Id
+    /*@Id
     @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_DC.AS_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")*/
 
     private Long transactionId;
     private AccountType accountType;//FK
@@ -22,8 +21,7 @@ public class AccountTransaction implements Serializable {
     private Long amount;
     private LocalDate transactionDate;
 
-    public AccountTransaction() {
-    }
+    public AccountTransaction(){}
 
     public AccountTransaction(Long transactionId, AccountType accountType, Long memberId, Long amount, LocalDate transactionDate) {
         this.transactionId = transactionId;
@@ -32,6 +30,7 @@ public class AccountTransaction implements Serializable {
         this.amount = amount;
         this.transactionDate = transactionDate;
     }
+
 
     @Id
     @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "AS_DC.NWU_GENERIC_SEQ", allocationSize = 1)

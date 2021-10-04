@@ -1,0 +1,2 @@
+insert into ac_dc.dc_account_type (ACCOUNT_TYPE_ID, MNEMONIC,ACCOUNT_TYPE_NAME,CREATION_DATE) values (5001, 'MILES', 'Miles', '2021-01-01');
+insert into ac_dc.dc_account_type (ACCOUNT_TYPE_ID, MNEMONIC,ACCOUNT_TYPE_NAME,CREATION_DATE) values (5002, 'PLAY', 'Game Play', '2021-03-01');

@@ -7,5 +7,5 @@ import java.util.List;
 public interface AccountTransactionTranslator {
     AccountTransaction save(AccountTransaction accountTransaction);
     List<AccountTransaction> getAllAccountTransactions();
-    AccountTransaction getAccountTransactionByPk(Long transactionId)
+    AccountTransaction getAccountTransactionByPk(Long transactionId);
 }

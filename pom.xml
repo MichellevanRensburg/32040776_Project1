@@ -24,7 +24,7 @@
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <swagger.version>1.5.20</swagger.version>
 
-        <haltOnFailure>false</haltOnFailure>//change to true later
+        <!--<haltOnFailure>false</haltOnFailure>//change to true later-->
     </properties>
 
     <modules>
@@ -107,7 +107,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <!--<build>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -168,6 +168,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+    </build>-->
 
 </project>
