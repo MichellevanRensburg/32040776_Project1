@@ -23,8 +23,8 @@
 
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <swagger.version>1.5.20</swagger.version>
-
-        <!--<haltOnFailure>false</haltOnFailure>//change to true later-->
+        <!--change to true later-->
+        <haltOnFailure>false</haltOnFailure>
     </properties>
 
     <modules>
@@ -33,34 +33,16 @@
         <module>AccountSystemTranslator</module>
         <module>AccountSystemLogic</module>
         <module>AccountSystemWebSpringBoot</module>
-
     </modules>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.3.2</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>4.3.30.RELEASE</version>
-            </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
                 <version>${springfox-swagger.version}</version>
                 <exclusions>
-                    <exclusion>
+                    <exclusion> <!-- Add exclusions to not have clashes on libraries-->
                         <groupId>com.fasterxml.jackson.annotation</groupId>
                         <artifactId>jackson.annotation</artifactId>
                     </exclusion>
@@ -92,7 +74,7 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>com.oracle</groupId>
+                <groupId>com.oracle.database.jdbc</groupId>
                 <artifactId>ojdbc8</artifactId>
                 <version>21.1.0.0</version>
             </dependency>
@@ -107,9 +89,14 @@
         </dependency>
     </dependencies>
 
-    <!--<build>
+    <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -169,5 +156,5 @@
             </plugins>
         </pluginManagement>
     </build>
--->
+
 </project>

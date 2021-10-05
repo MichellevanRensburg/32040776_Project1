@@ -67,4 +67,9 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         return null;
     }
 
+    @Override
+    public AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic) {
+        return accountTypeRepository.getAccountTypeByMnemonic(accountTypeMnemonic);
+    }
+
 }

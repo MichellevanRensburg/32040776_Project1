@@ -10,12 +10,12 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "AS_DC")
+@Table(name = "ACCOUNT_TYPE")
 public class AccountType implements Serializable {
     private static final long serialVersionUID = 3833725316797154577L;
 
     @Id
-    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_DC.AS_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")
 
     private Long accountTypeId;

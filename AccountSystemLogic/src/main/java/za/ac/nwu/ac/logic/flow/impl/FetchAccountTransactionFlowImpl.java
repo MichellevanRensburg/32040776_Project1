@@ -6,9 +6,11 @@ import za.ac.nwu.ac.domain.persistense.AccountTransaction;
 import za.ac.nwu.ac.logic.flow.FetchAccountTransactionFlow;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Component
 public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionFlow {
 

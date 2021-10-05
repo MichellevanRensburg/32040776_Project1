@@ -1,14 +1,14 @@
 package za.ac.nwu.ac.translator.impl;
 
-import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.persistense.AccountTransaction;
-import za.ac.nwu.ac.domain.persistense.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTransactionRepository;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
     private AccountTransactionRepository repo;
 
@@ -41,7 +41,7 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         try{
             return repo.findById(transactionId).orElse(null);
         }catch (Exception e){
-            throw  new RuntimeException(("Unable to read from the DB", e);
+            throw  new RuntimeException("Unable to read from the DB", e);
         }
     }
 }

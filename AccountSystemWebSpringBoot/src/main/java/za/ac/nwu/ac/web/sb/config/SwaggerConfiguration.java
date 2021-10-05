@@ -12,13 +12,15 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
 @Import(springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
+
+
+    // Declare generic values to upgrade versions easier
     @Value("${swagger.application.version}")
     private String applicationVersion;
 
@@ -38,7 +40,6 @@ public class SwaggerConfiguration {
                 .pathMapping("/")
                 .apiInfo(apiInfo());
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 applicationName,

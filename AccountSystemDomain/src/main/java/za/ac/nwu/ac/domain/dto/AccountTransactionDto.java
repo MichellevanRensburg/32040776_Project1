@@ -2,6 +2,7 @@ package za.ac.nwu.ac.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.ac.nwu.ac.domain.persistense.AccountTransaction;
+import za.ac.nwu.ac.domain.persistense.AccountType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -36,7 +37,7 @@ public class AccountTransactionDto implements Serializable {
     }
 
     @JsonIgnore
-    public AccountTransaction buildAccountTransaction(AccountTransactionDto accountType){
+    public AccountTransaction buildAccountTransaction(AccountType accountType){
         return new AccountTransaction(this.getTransactionId(), accountType, this.getMemberId(), this.getAmount(), this.getTransactionDate());
     }
 
@@ -82,10 +83,10 @@ public class AccountTransactionDto implements Serializable {
                 && Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
     }
 
-    @JsonIgnore
+    /*@JsonIgnore
     public AccountTransaction getAccountTransaction(){
         return new AccountTransaction(getTransactionId(), getAccountTypeMnemonic(), getMemberId(),getAmount(),getTransactionDate());
-    }
+    }*/
 
     @Override
     public int hashCode(){return Objects.hash(transactionId,accountTypeMnemonic,memberId,amount,transactionDate);}
