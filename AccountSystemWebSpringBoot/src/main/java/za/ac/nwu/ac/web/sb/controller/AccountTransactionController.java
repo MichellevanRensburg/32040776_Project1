@@ -24,7 +24,7 @@ public class AccountTransactionController {
     private final CreateAccountTransactionFlow createAccountTransactionFlow;
 
     @Autowired
-    public AccountTransactionController(FetchAccountTransactionFlow fetchAccountTransactionFlow, @Qualifier("createAccountTypeFlowName") CreateAccountTransactionFlow createAccountTransactionFlow){
+    public AccountTransactionController(FetchAccountTransactionFlow fetchAccountTransactionFlow, @Qualifier("createAccountTransactionFlowName") CreateAccountTransactionFlow createAccountTransactionFlow){
         this.fetchAccountTransactionFlow = fetchAccountTransactionFlow;
         this.createAccountTransactionFlow = createAccountTransactionFlow;
     }
@@ -61,7 +61,7 @@ public class AccountTransactionController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{transactionId}")
+    @GetMapping("{transactionId}")
     @ApiOperation(value = "Fetches the specified Account transaction.", notes = "fetches the Account transaction corresponding to the given transactionId.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Account Transaction Found"),

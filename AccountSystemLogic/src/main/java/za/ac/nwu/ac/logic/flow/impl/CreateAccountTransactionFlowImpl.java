@@ -10,13 +10,13 @@ import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 
 import javax.transaction.Transactional;
-import java.util.logging.Logger;
+/*import java.util.logging.Logger;*/
 
 @Transactional
-@Component
+@Component("createAccountTransactionFlowName")
 public class CreateAccountTransactionFlowImpl implements CreateAccountTransactionFlow {
 
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(CreateAccountTransactionFlowImpl.class);
+    /*private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(CreateAccountTransactionFlowImpl.class);*/
 
     private final AccountTransactionTranslator accountTransactionTranslator;
     private final FetchAccountTypeFlow fetchAccountTypeFlow;

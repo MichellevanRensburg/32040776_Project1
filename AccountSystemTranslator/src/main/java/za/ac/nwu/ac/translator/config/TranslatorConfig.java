@@ -9,5 +9,4 @@ import za.ac.nwu.ac.repo.config.RepositoryConfig;
 @Configuration
 @ComponentScan(basePackages = {"za.ac.nwu.ac.translator"})
 public class TranslatorConfig {
-
 }

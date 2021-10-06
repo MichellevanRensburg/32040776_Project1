@@ -11,9 +11,9 @@ import java.util.Objects;
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = 5320578342102714156L;
-    /*@Id
-    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_DC.AS_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")*/
+    @Id
+    @SequenceGenerator(name = "AS_GENERIC_SEQ", sequenceName = "AS_GENERIC_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AS_GENERIC_SEQ")
 
     private Long transactionId;
     private AccountType accountType;//FK

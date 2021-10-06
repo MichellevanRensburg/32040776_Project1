@@ -1,5 +1,6 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
 import za.ac.nwu.ac.domain.persistense.AccountTransaction;
@@ -14,14 +15,16 @@ import java.util.List;
 @Component
 public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionFlow {
 
-    private AccountTransactionTranslator translator;
+    private final AccountTransactionTranslator accountTransactionTranslator;
 
-    public FetchAccountTransactionFlowImpl(AccountTransactionTranslator translator){this.translator = translator;}
+    @Autowired
+    public FetchAccountTransactionFlowImpl(AccountTransactionTranslator accountTransactionTranslator){
+        this.accountTransactionTranslator = accountTransactionTranslator;}
 
     @Override
     public List<AccountTransactionDto> getAllAccountTransactions() {
         List<AccountTransactionDto> accountTransactionDtos = new ArrayList<>();
-        for (AccountTransaction accountTransaction : translator.getAllAccountTransactions()){
+        for (AccountTransaction accountTransaction : accountTransactionTranslator.getAllAccountTransactions()){
             accountTransactionDtos.add(new AccountTransactionDto(accountTransaction));
         }
         return accountTransactionDtos;
@@ -34,7 +37,7 @@ public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionF
 
     @Override
     public AccountTransactionDto getAllAccountTransactionById(Long transactionId){
-        AccountTransaction accountTransaction = translator.getAccountTransactionByPk(transactionId);
+        AccountTransaction accountTransaction = accountTransactionTranslator.getAccountTransactionByPk(transactionId);
         return null != accountTransaction ? new AccountTransactionDto(accountTransaction) : null;
     }
 }

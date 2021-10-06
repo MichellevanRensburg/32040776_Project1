@@ -19,8 +19,6 @@ import java.util.Collections;
 @Import(springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
 
-
-    // Declare generic values to upgrade versions easier
     @Value("${swagger.application.version}")
     private String applicationVersion;
 
