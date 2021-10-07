@@ -67,7 +67,7 @@ public class AccountTypeController {
          return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("{mnemonic}") // define PathVariable
+    @GetMapping("/{mnemonic}") // define PathVariable
     @ApiOperation(value = "Fetches the specified AccountType.", notes = "Fetches the AccountType corresponding to the given mnemonic.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Goal found"),
@@ -85,7 +85,7 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("{mnemonic}") // define PathVariable
+    @DeleteMapping("/{mnemonic}")
     @ApiOperation(value = "Deletes the specified AccountType.", notes = "Deletes the AccountType corresponding to the given mnemonic.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "AccountType Deleted"),
@@ -103,7 +103,7 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PutMapping("{mnemonic}") // define PathVariable
+    @PutMapping("/{mnemonic}") // define PathVariable
     @ApiOperation(value = "Updates the specified AccountType.", notes = "Updates the AccountType corresponding to the given mnemonic.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "AccountType Updated"),

@@ -1,10 +1,10 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
-import za.ac.nwu.ac.domain.persistense.AccountTransaction;
-import za.ac.nwu.ac.domain.persistense.AccountType;
+import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.logic.flow.CreateAccountTransactionFlow;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
@@ -21,6 +21,7 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
     private final AccountTransactionTranslator accountTransactionTranslator;
     private final FetchAccountTypeFlow fetchAccountTypeFlow;
 
+    @Autowired
     public CreateAccountTransactionFlowImpl(AccountTransactionTranslator accountTransactionTranslator,
                                             FetchAccountTypeFlow fetchAccountTypeFlow){
         this.accountTransactionTranslator = accountTransactionTranslator;
@@ -42,5 +43,4 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
         /*LOGGER.info("The return object is {}", results);*/
         return results;
     }
-
 }

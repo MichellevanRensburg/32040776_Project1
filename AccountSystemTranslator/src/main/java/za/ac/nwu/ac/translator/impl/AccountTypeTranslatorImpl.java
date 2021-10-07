@@ -3,7 +3,7 @@ package za.ac.nwu.ac.translator.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
-import za.ac.nwu.ac.domain.persistense.AccountType;
+import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
@@ -73,7 +73,21 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
 
     @Override
     public AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic) {
-        return accountTypeRepository.getAccountTypeByMnemonic(accountTypeMnemonic);
+        try{
+            return accountTypeRepository.getAccountTypeByMnemonic(accountTypeMnemonic);
+        }catch (Exception e){
+            throw new RuntimeException("Unable to save to the DB", e);
+        }
+    }
+
+    @Override
+    public AccountTypeDto deleteAccountType(String mnemonic) {
+        try{
+            AccountType accountType = accountTypeRepository.delete(accountTypeDto.getAccountType());
+            return new AccountTypeDto(accountType);
+        }catch (Exception e){
+            throw new RuntimeException("Unable to delete from the DB", e);
+        }
     }
 
 }

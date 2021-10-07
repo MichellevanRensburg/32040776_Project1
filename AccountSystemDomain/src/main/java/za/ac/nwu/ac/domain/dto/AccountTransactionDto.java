@@ -1,16 +1,19 @@
 package za.ac.nwu.ac.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import za.ac.nwu.ac.domain.persistense.AccountTransaction;
-import za.ac.nwu.ac.domain.persistense.AccountType;
+import io.swagger.annotations.ApiModel;
+import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.ac.domain.persistence.AccountType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@ApiModel(value = "accountTransaction", description = "DTO that represent the account transaction")
 public class AccountTransactionDto implements Serializable {
 
     private static final long serialVersionUID = -6731456901152363824L;
+
     private Long transactionId;
     private String accountTypeMnemonic;
     private Long memberId;

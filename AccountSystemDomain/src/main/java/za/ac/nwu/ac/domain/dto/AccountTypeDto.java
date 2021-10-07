@@ -3,14 +3,13 @@ package za.ac.nwu.ac.domain.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import za.ac.nwu.ac.domain.persistense.AccountType;
+import za.ac.nwu.ac.domain.persistence.AccountType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @ApiModel(value = "AccountType", description = "A DTO that represents the Account Type")
-
 public class AccountTypeDto implements Serializable{
 
     private static final long serialVersionID = 5346853206480289868L;
@@ -62,7 +61,7 @@ public class AccountTypeDto implements Serializable{
             name = "CreationDate",
             notes = "This is the date on which the Account was created",
             dataType = "java.lang.String",
-            example = "2020-01",
+            example = "2020-01-11",
             allowEmptyValue = false)
 
     public LocalDate getCreationDate() {return creationDate;}
