@@ -41,4 +41,8 @@ public class CreateAccountTypeFlowImplTest {
         assertEquals(LocalDate.now(), result.getCreationDate());
         verify(translator, times(1)).create(any(AccountTypeDto.class));
     }
+
+    @Test
+    public void testCreate() {
+    }
 }

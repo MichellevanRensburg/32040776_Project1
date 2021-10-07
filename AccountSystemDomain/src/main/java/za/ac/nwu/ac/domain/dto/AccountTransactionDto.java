@@ -17,31 +17,34 @@ public class AccountTransactionDto implements Serializable {
     private Long transactionId;
     private String accountTypeMnemonic;
     private Long memberId;
+    private Long balance;
     private Long amount;
     private LocalDate transactionDate;
 
     public AccountTransactionDto() {
     }
 
-    public AccountTransactionDto(Long transactionId, String accountTypeMnemonic, Long memberId, Long amount, LocalDate transactionDate) {
+    public AccountTransactionDto(Long transactionId, String accountTypeMnemonic, Long memberId, Long amount, Long balance, LocalDate transactionDate) {
         this.transactionId = transactionId;
         this.accountTypeMnemonic = accountTypeMnemonic;
         this.memberId = memberId;
         this.amount = amount;
+        this.balance = balance;
         this.transactionDate = transactionDate;
     }
 
     public AccountTransactionDto(AccountTransaction accountTransaction) {
-        this.transactionId = accountTransaction.getTransactionId();
-        this.accountTypeMnemonic = accountTransaction.getAccountType().getMnemonic();
-        this.memberId = accountTransaction.getMemberId();
-        this.amount = accountTransaction.getAmount();
-        this.transactionDate = accountTransaction.getTransactionDate();
+        this.setTransactionId(accountTransaction.getTransactionId());
+        this.setAccountTypeMnemonic(accountTransaction.getAccountType().getMnemonic());
+        this.setMemberId(getMemberId());
+        this.setAmount(accountTransaction.getAmount());
+        this.setBalance(accountTransaction.getBalance());
+        this.setTransactionDate(accountTransaction.getTransactionDate());
     }
 
     @JsonIgnore
     public AccountTransaction buildAccountTransaction(AccountType accountType){
-        return new AccountTransaction(this.getTransactionId(), accountType, this.getMemberId(), this.getAmount(), this.getTransactionDate());
+        return new AccountTransaction(this.getTransactionId(), accountType, this.getMemberId(), this.getAmount(), this.getBalance(), this.getTransactionDate());
     }
 
     public Long getTransactionId() {
@@ -70,6 +73,13 @@ public class AccountTransactionDto implements Serializable {
         this.amount = amount;
     }
 
+    public Long getBalance() {
+        return balance;
+    }
+    public void setBalance(Long balance) {
+        this.balance = balance;
+    }
+
     public LocalDate getTransactionDate() {
         return transactionDate;
     }
@@ -83,7 +93,8 @@ public class AccountTransactionDto implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         AccountTransactionDto that = (AccountTransactionDto) o;
         return Objects.equals(transactionId, that.transactionId) && Objects.equals(accountTypeMnemonic, that.accountTypeMnemonic)
-                && Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
+                && Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount)
+                && Objects.equals(balance, that.balance) && Objects.equals(transactionDate, that.transactionDate);
     }
 
     /*@JsonIgnore
@@ -92,7 +103,7 @@ public class AccountTransactionDto implements Serializable {
     }*/
 
     @Override
-    public int hashCode(){return Objects.hash(transactionId,accountTypeMnemonic,memberId,amount,transactionDate);}
+    public int hashCode(){return Objects.hash(transactionId,accountTypeMnemonic,memberId,amount,balance,transactionDate);}
 
     @Override
     public String toString(){
@@ -101,6 +112,7 @@ public class AccountTransactionDto implements Serializable {
                 ", accountTypeMnemonic='" + accountTypeMnemonic + '\'' +
                 ", memberId=" + memberId +
                 ", amount='" + amount + '\'' +
+                ", balance=" + balance + '\'' +
                 ", transactionDate=" + transactionDate +
                 '}';
     }

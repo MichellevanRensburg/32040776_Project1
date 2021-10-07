@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+AccountSystemLogic,za.ac.nwu.ac.logic.config,LogicConfig,3,0,0,0,1,0,1,0,1,0
+AccountSystemLogic,za.ac.nwu.ac.logic.flow.impl,ModifyAccountTypeFlowImpl,12,6,0,0,2,3,2,1,2,1
+AccountSystemLogic,za.ac.nwu.ac.logic.flow.impl,CreateAccountTransactionFlowImpl,38,13,0,0,9,4,1,2,1,2
+AccountSystemLogic,za.ac.nwu.ac.logic.flow.impl,FetchAccountTransactionFlowImpl,43,6,4,0,8,2,5,1,3,1
+AccountSystemLogic,za.ac.nwu.ac.logic.flow.impl,CreateAccountTypeFlowImpl,0,26,1,1,0,8,1,3,0,3
+AccountSystemLogic,za.ac.nwu.ac.logic.flow.impl,FetchAccountTypeFlowImpl,20,0,0,0,6,0,4,0,4,0
+AccountSystemLogic,za.ac.nwu.ac.logic,mmm,3,0,0,0,1,0,1,0,1,0

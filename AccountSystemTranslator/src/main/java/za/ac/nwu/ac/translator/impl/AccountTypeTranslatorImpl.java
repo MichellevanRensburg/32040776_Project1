@@ -7,6 +7,7 @@ import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,10 +84,20 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     @Override
     public AccountTypeDto deleteAccountType(String mnemonic) {
         try{
-            AccountType accountType = accountTypeRepository.delete(accountTypeDto.getAccountType());
+            AccountType accountType = accountTypeRepository.delete(mnemonic);
             return new AccountTypeDto(accountType);
         }catch (Exception e){
             throw new RuntimeException("Unable to delete from the DB", e);
+        }
+    }
+
+    @Override
+    public AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate) {
+        try{
+            AccountType accountType = accountTypeRepository.update(mnemonic, newAccountTypeName, newCreationDate);
+            return new AccountTypeDto(accountType);
+        }catch (Exception e){
+            throw new RuntimeException("Unable to update the DB", e);
         }
     }
 

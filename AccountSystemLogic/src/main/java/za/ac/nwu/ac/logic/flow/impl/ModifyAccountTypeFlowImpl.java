@@ -26,6 +26,6 @@ public class ModifyAccountTypeFlowImpl implements ModifyAccountTypeFlow{
 
     @Override
     public AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate) {
-        return null;
+        return accountTypeTranslator.updateAccountType(mnemonic, newAccountTypeName, newCreationDate);
     }
 }
