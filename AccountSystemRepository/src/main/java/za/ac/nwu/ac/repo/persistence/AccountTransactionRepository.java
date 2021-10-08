@@ -7,7 +7,7 @@ import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 
 @Repository
 public interface AccountTransactionRepository extends JpaRepository<AccountTransaction, Long> {
-    @Query(value = "SELECT" +
+    /*@Query(value = "SELECT" +
             "         TRANSC_ID," +
             "         ACCOUNT_TYPE_ID," +
             "         MEMBER_ID," +
@@ -16,5 +16,5 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
             "     FROM " +
             "         ACCOUNT_TYPE_TX" +
             "     WHERE TRANSC_ID = :transid ")
-    AccountTransaction getAccountTransactionByPk(Long transactionId);
+    AccountTransaction getAccountTransactionByPk(Long transactionId);*/
 }

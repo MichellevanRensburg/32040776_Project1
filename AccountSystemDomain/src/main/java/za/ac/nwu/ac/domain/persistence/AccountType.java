@@ -21,6 +21,8 @@ public class AccountType implements Serializable {
     //@JsonSerialize(using = LocalDateSerializer.class)
     //@JsonDeserialize(using = LocalDateDezerializer.class)
 
+   public AccountType(){}
+
     public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate) {
         this.accountTypeId = accountTypeId;
         this.mnemonic = mnemonic;

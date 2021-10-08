@@ -1,5 +1,7 @@
 package za.ac.nwu.ac.translator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
@@ -12,6 +14,8 @@ import java.util.List;
 @Component
 public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
     private final AccountTransactionRepository accountTransactionRepository;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTransactionTranslatorImpl.class);
 
     @Autowired
     public AccountTransactionTranslatorImpl(AccountTransactionRepository accountTransactionRepository){

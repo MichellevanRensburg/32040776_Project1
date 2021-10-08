@@ -1,5 +1,7 @@
 package za.ac.nwu.ac.translator.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
@@ -14,6 +16,8 @@ import java.util.List;
 @Component
 public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     private final AccountTypeRepository accountTypeRepository;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountTypeTranslatorImpl.class);
 
     @Autowired
     public AccountTypeTranslatorImpl(AccountTypeRepository accountTypeRepository){
@@ -37,6 +41,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     public AccountTypeDto create(AccountTypeDto accountTypeDto){
         try{
             AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
+            LOGGER.info("The return object of Account type is :");
             return new AccountTypeDto(accountType);
         }catch (Exception e){
             throw new RuntimeException("Unable to save to the DB", e);
@@ -84,7 +89,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     @Override
     public AccountTypeDto deleteAccountType(String mnemonic) {
         try{
-            AccountType accountType = accountTypeRepository.delete(mnemonic);
+            AccountType accountType = accountTypeRepository.deleteAccountType(mnemonic);
             return new AccountTypeDto(accountType);
         }catch (Exception e){
             throw new RuntimeException("Unable to delete from the DB", e);
@@ -94,7 +99,7 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     @Override
     public AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate) {
         try{
-            AccountType accountType = accountTypeRepository.update(mnemonic, newAccountTypeName, newCreationDate);
+            AccountType accountType = accountTypeRepository.updateAccountType(mnemonic, newAccountTypeName, newCreationDate);
             return new AccountTypeDto(accountType);
         }catch (Exception e){
             throw new RuntimeException("Unable to update the DB", e);
